@@ -24,8 +24,11 @@ public class Intake extends AbstractSubsystem{
     }
 
     public void setIntakeMotorFalcon(double speed) {
-        intakeMotorFalcon.set(ControlMode.PercentOutput, speed);
+        if(intakeSol.get()){
+            intakeMotorFalcon.set(ControlMode.PercentOutput, speed);
+        }
     }
+
 
     public static Intake getInstance() {
         return instance;
